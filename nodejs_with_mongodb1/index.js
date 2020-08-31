@@ -5,6 +5,8 @@ const app=express();
 
 const mongoUrl="mongodb+srv://herath:herath41@cluster0.kl6b4.azure.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
+require("./models/Todos");
+
 const connectDB= async()=>{
     try {
         await mongoose.connect(mongoUrl,{ useNewUrlParser: true , useUnifiedTopology: true});
