@@ -7,7 +7,7 @@ const mongoUrl="mongodb+srv://herath:herath41@cluster0.kl6b4.azure.mongodb.net/<
 
 const connectDB= async()=>{
     try {
-        await mongoose.connect(mongoUrl);
+        await mongoose.connect(mongoUrl,{ useNewUrlParser: true , useUnifiedTopology: true});
         console.log("connect to the database");
     } catch (err) {
         console.log (err.message);
