@@ -12,4 +12,4 @@ const TodoSchema=new Schema({
     }
 });
 
-module.exports=model("todo",TodoSchema );
+module.exports=model("todos",TodoSchema );

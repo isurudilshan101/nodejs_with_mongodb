@@ -23,3 +23,22 @@ const PORT=process.env.PORT||5001;
 app.listen(PORT,()=>{
     console.log(`server started at ${PORT}`);
 });
+
+//Add  data to database
+
+const ToDos=mongoose.model("todos");
+
+const addDummyData= async ()=>{
+    try {
+        const todo=new ToDos({
+            title:"learn node",
+            description:"learn node with express"
+        });
+        await todo.save();
+        console.log("Data saved");
+    } catch (err) {
+        console.error(err.message);
+    }
+};
+
+addDummyData();
