@@ -31,8 +31,8 @@ const ToDos=mongoose.model("todos");
 const addDummyData= async ()=>{
     try {
         const todo=new ToDos({
-            title:"learn node",
-            description:"learn node with express"
+            title:"learn vuejs",
+            description:"learn vuejs with vuex"
         });
         await todo.save();
         console.log("Data saved");
