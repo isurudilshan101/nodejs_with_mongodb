@@ -45,7 +45,7 @@ const ToDos=mongoose.model("todos");
 
 ( async()=>{
     try {
-        const todos=await ToDos.find();
+        const todos=await ToDos.findById("5f4d5b3f63b06f88302ce8a6");
         console.log(todos);
     } catch (err) {
         console.error(err.message);
