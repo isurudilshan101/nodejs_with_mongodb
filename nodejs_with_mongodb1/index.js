@@ -43,12 +43,23 @@ const ToDos=mongoose.model("todos");
 
 // addDummyData();
 
-( async()=>{
+// ( async()=>{
+//     try {
+//         const todos=await ToDos.findOne({title:"learn node"});
+//         console.log(todos);
+//     } catch (err) {
+//         console.error(err.message);
+//     }
+
+// })();
+
+(async()=>{
     try {
-        const todos=await ToDos.findById("5f4d5b3f63b06f88302ce8a6");
+       const todos=await ToDos.findOneAndDelete("5f4d5d0abbb9733570ae7fa0");
         console.log(todos);
     } catch (err) {
         console.error(err.message);
+        
     }
 
 })();
