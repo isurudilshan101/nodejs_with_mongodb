@@ -43,7 +43,7 @@ const ToDos=mongoose.model("todos");
 
 // addDummyData();
 
-const getData= async()=>{
+( async()=>{
     try {
         const todos=await ToDos.find();
         console.log(todos);
@@ -51,4 +51,4 @@ const getData= async()=>{
         console.error(err.message);
     }
 
-}
+})();
