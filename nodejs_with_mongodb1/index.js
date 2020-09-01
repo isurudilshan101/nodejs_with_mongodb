@@ -28,17 +28,27 @@ app.listen(PORT,()=>{
 
 const ToDos=mongoose.model("todos");
 
-const addDummyData= async ()=>{
+// const addDummyData= async ()=>{
+//     try {
+//         const todo=new ToDos({
+//             title:"learn vuejs",
+//             description:"learn vuejs with vuex"
+//         });
+//         await todo.save();
+//         console.log("Data saved");
+//     } catch (err) {
+//         console.error(err.message);
+//     }
+// };
+
+// addDummyData();
+
+const getData= async()=>{
     try {
-        const todo=new ToDos({
-            title:"learn vuejs",
-            description:"learn vuejs with vuex"
-        });
-        await todo.save();
-        console.log("Data saved");
+        const todos=await ToDos.find();
+        console.log(todos);
     } catch (err) {
         console.error(err.message);
     }
-};
 
-addDummyData();
+}
