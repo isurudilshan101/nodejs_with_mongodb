@@ -31,8 +31,8 @@ const ToDos=mongoose.model("todos");
 // const addDummyData= async ()=>{
 //     try {
 //         const todo=new ToDos({
-//             title:"learn vuejs",
-//             description:"learn vuejs with vuex"
+//             title:"learn react",
+//             description:"learn react with express"
 //         });
 //         await todo.save();
 //         console.log("Data saved");
@@ -41,7 +41,7 @@ const ToDos=mongoose.model("todos");
 //     }
 // };
 
-// addDummyData();
+//addDummyData();
 
 // ( async()=>{
 //     try {
@@ -53,12 +53,30 @@ const ToDos=mongoose.model("todos");
 
 // })();
 
+//delete data
+// (async()=>{
+//     try {
+//        const todos=await ToDos.findOneAndDelete("5f4d5d0abbb9733570ae7fa0");
+//         console.log(todos);
+//     } catch (err) {
+//         console.error(err.message);
+        
+//     }
+
+// })();
+
+//update data base
+
 (async()=>{
     try {
-       const todos=await ToDos.findOneAndDelete("5f4d5d0abbb9733570ae7fa0");
-        console.log(todos);
+        await ToDos.updateOne(
+            {_id:"5f4e7c0a62813a8f68bb8dbd"},
+            {$set:{title:"learn node", description:"learn with node"}}
+          
+        );
+        console.log("data updated");
     } catch (err) {
-        console.error(err.message);
+        console.err();
         
     }
 
